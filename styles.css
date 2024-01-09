@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0px 0px;
   padding: 0px;
@@ -10,6 +16,11 @@ body {
 
 html {
   font-size: 18px;
+}
+
+button {
+  border-radius: 0.3rem;
+  border-style: none;
 }
 
 /*---------------------------------------------Smaller Screen---------------------------------------*/
@@ -91,6 +102,56 @@ li>a {
   padding: 0;
   margin: 1.2rem 0 0.9rem 0;
   font-weight: 300;
+}
+
+/*-------------------History (this button is at the end of the HTML <section>--*/
+
+#history {
+  position: absolute;
+  right: 0.9rem;
+  top: 3.3rem;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background: url('./mediaFiles/history-icon_image.png') center no-repeat;
+  background-size: cover;
+  border-radius: 3px;
+}
+
+#history-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+  background-color: #292727;
+  padding: 0.9rem;
+  color: #eee3e3;
+  font-size: 1.2rem;
+  z-index: 3;
+}
+
+.close-clearHistory_cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+#clear-history {
+  width: fit-content;
+}
+
+/* #close-history {
+  
+} */
+
+.history-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.3rem 0.9rem;
+  font-size: 18px;
+  color: #eee3e3;
+  border-bottom: 1px solid #eee3e3;
 }
 
 /*--------------------Risk Input-------*/
@@ -273,8 +334,6 @@ output+.copyBtn {
   font-weight: 600;
   color: #292727;
   background-color: rgb(2, 162, 202);
-  border-radius: 0.3rem;
-  border-style: none;
 }
 
 /*--------------Output Grid-------*/
@@ -289,8 +348,41 @@ output+.copyBtn {
   margin-bottom: 0.63rem;
 }
 
+/*------------------------------- After calculation actions--------------------------*/
+
+.after-calc-actions {
+  display: flex;
+  padding: 0.9rem;
+  justify-content: space-between;
+}
+
+.after-calcBtn {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+
+.delete {
+  background-color: rgb(202, 78, 78);
+  margin-right: 0.6rem;
+}
+
+.clear-all {
+  margin-right: auto;
+  background-color: rgb(221, 221, 221);
+}
+
+.clear-position {
+  background-color: rgb(221, 199, 127);
+}
+
+.save-position {
+  margin-left: 0.6rem;
+  background-color: rgb(0, 158, 150);
+}
+
 /*--------------------------------------------Bigger Screen-----------------------------------------*/
-@media (min-width: 548px) {
+@media (min-width: 769px) {
   main {
     margin: 0px;
     padding: 0;
@@ -359,6 +451,20 @@ output+.copyBtn {
       'btnFlex'
       'outptGrid';
     grid-template-rows: auto;
+  }
+
+  /*-------------------History-----------------*/
+
+  #history {
+    position: relative;
+    display: inline-block;
+    left: -90px;
+    top: 15px;
+  }
+
+  #history-container {
+    height: 75%;
+    width: 33.5%;
   }
 
   /*--------------------Risk Input-------*/

@@ -1,10 +1,10 @@
-let valueInputs = document.getElementsByTagName('input');
-let [
+export const valueInputs = document.getElementsByTagName('input');
+export const [
   riskAmount,
   profitAmount,
   profitPerc,
   leverage,
-  SIZE,
+  positionSIZE,
   risk_rewardRatio,
 ] = document.getElementsByTagName('output');
 
@@ -24,11 +24,11 @@ function calcPositionSize(){
   let riskRange = Math.abs((entryPrice-stopLoss)*toPips),
   ePinPips = entryPrice*toPips,
   riskPerc = risk*0.01;
-  riskAmount.value = balance*riskPerc,
-  pipValue = riskAmount.value/riskRange,
-  
-  SIZE.value = (pipValue*ePinPips).toFixed(8);
-  leverage.value = Math.ceil((SIZE.value/balance)) + 'x';
+  riskAmount.value = balance*riskPerc;
+  let pipValue = riskAmount.value/riskRange;
+
+  positionSIZE.value = (pipValue*ePinPips).toFixed(8);
+  leverage.value = Math.ceil((positionSIZE.value/balance)) + 'x';
 
   if (takeProfit){
       let profitRange = Math.abs((entryPrice-takeProfit)*toPips);

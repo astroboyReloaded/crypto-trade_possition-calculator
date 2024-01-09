@@ -10,8 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/ec3aeabf1a.js" crossorigin="anonymous"></script>
-  <script src="./scripts/calculator.js" defer></script>
-  <script src="./scripts/clippboard.js" defer></script>
+  <script src="./scripts/calculator.js" type="module" defer></script>
+  <script src="./scripts/clippboard.js" type="module" defer></script>
+  <script src="./scripts/saveToLS.js" type="module" defer></script>
+  <script src="./scripts/history.js" type="module" defer></script>
   <title>Trading Assist</title>
 </head>
 
@@ -101,7 +103,15 @@
             <output id="rRRt">:1</output>
           </div>
         </div>
+        <div class="after-calc-actions">
+          <button class="delete after-calcBtn">Delete</button>
+          <button class="clear-all after-calcBtn">Clear All</button>
+          <button class="clear-position after-calcBtn">Clear</button>
+          <button class="save-position after-calcBtn">Save</button>
+        </div>
       </object>
+      <!-------- Position Calc History------>
+      <span id="history"></span>
     </section>
     <!------------- End of App ----------->
   </main>
